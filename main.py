@@ -1,9 +1,8 @@
 import re
-import oschina
-import csdn
-import jianshu
 import linecache
-import csdn
+
+from MetaWeblog import Cnblog
+from MetaWeblog import Oschina
 
 
 class Main(object):
@@ -52,9 +51,24 @@ if __name__ == '__main__':
     # osChina = oschina.OsChina()
     # osChina.post(main, timeout)
  # 简书
-    jian_shu = jianshu.JianShu()
-    jian_shu.post(main, timeout)
+ #    jian_shu = jianshu.JianShu()
+ #    jian_shu.post(main, timeout)
 
-#csdn
-    # csdn = csdn.CSDN()
-    # csdn.post(main, timeout)
+
+    # 博客园
+    #mw = Cnblog.CsdnMetaWeblog('YoSaukit', 'mqiuqiu1988!')
+    # 新增文章（30秒内只能发一篇博文）
+    #postid = mw.newPost('metawebolg test1342334453', 'This is a content')
+
+    # 修改文章
+    #mw.editPost(postid, 'metawebolg test', 'This is the first content')
+    # 获得最近的文章
+    #print(mw.getRecentPosts('', 5))
+    # 删除文章
+    #mw.deletePost(postid)
+
+    #51otc
+    mw = Oschina.Oschina('15600282811', 'mqiuqiu1988')
+    postid = mw.newPost('原创', 'category', 'metawebolg test1342334453', 'This is a content')
+
+

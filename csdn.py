@@ -11,8 +11,8 @@ class CSDN(object):
     @staticmethod
     def post(main, timeout, self_timeout=5):
         # 1.账号密码
-        account = '*****'
-        password = '******'
+        account = '15600282811'
+        password = 'mqiuqiu1988'
 
         # 2.跳转登陆
         login = 'https://passport.csdn.net/account/login'
@@ -24,14 +24,14 @@ class CSDN(object):
 
         # 4.使用账号密码登陆
         login_by_account = WebDriverWait(driver, timeout).until(
-            lambda d: d.find_element_by_xpath('/html/body/div[3]/div/div/div[2]/div/h3/a'))
+            lambda d: d.find_element_by_xpath('//*[@id="app"]/div/div/div/div[2]/div[4]/ul/li[2]/a'))
         login_by_account.click()
         time.sleep(self_timeout)
-        driver.find_element_by_id('username').send_keys(account)
-        driver.find_element_by_id('password').send_keys(password)
-        driver.find_element_by_xpath('//*[@id="fm1"]/input[8]').click()
+        driver.find_element_by_id('all').send_keys(account)
+        driver.find_element_by_id('password-number').send_keys(password)
+        driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[2]/div[4]/form/div/div[6]/div/button').click()
 
-        # 4.使用QQ授权登录
+        #4.使用QQ授权登录
         # driver.find_element_by_id('qqAuthorizationUrl').click()
         # driver.close()
         # authorize.qq(driver, timeout)
@@ -45,14 +45,15 @@ class CSDN(object):
         driver.switch_to.window(window_handles[-1])
 
         # 6.点击"开始写作"
-        start = WebDriverWait(driver, timeout).until(
-            lambda d: d.find_element_by_xpath('//*[@id="btnStart"]'))
-        start.click()
+        # start = WebDriverWait(driver, timeout).until(
+        #     lambda d: d.find_element_by_xpath('//*[@id="btnStart"]'))
+        # start.click()
 
         # 7.填写标题, 内容
         time.sleep(self_timeout)
-        title = driver.find_element_by_xpath('//*[@id="txtTitle"]')
+        title = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[1]/div/div[1]/input')
         title.clear()
+        title.send_keys("")
         title.send_keys(main.title)
         # PS:下面这行代码很重要，卡了好久才解决┭┮﹏┭┮，不信可以试试注释掉这句
         ActionChains(driver).click(title).perform()

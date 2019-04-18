@@ -62,7 +62,7 @@ class JianShu(object):
         insert_img.click()
         #（1）本地图片
         # img = driver.find_element_by_id('kalamu-upload-image')
-        # img.send_keys('/Users/didi/Documents/PycharmProjects/jianshu_article/test.jpg')
+        # img.send_keys('/Users/didi/Documents/PycharmProjects/jianshu/test.jpg')
         #（2）网络图片
         driver.find_element_by_class_name('md7x2').click()
         online_img = driver.find_element_by_id('email')
@@ -78,10 +78,11 @@ class JianShu(object):
         time.sleep(self_timeout)
         driver.find_element_by_xpath('//*[@id="root"]/div/div[2]/div[2]/div/div/div/div/ul/li[1]/a/i').click()
         time.sleep(self_timeout)
-
+        driver.find_element_by_xpath('//*[@id="root"]/div/div[2]/div[2]/div/div/div/div/ul/li[1]/a/i').click()
+        time.sleep(self_timeout)
         #复制链接
         # time.sleep(self_timeout)
         # driver.find_element_by_xpath('//*[@id="root"]/div[2]/div[1]/ul/li[3]/i').click()
         #查看文章
-        driver.find_element_by_xpath('//*[@id="root"]/div[2]/div[1]/div/a[2]').click()
-        time.sleep(self_timeout)
+        # driver.find_element_by_xpath('//*[@id="root"]/div[2]/div[1]/div/a[2]').click()
+        # time.sleep(self_timeout)

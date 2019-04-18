@@ -3,11 +3,12 @@
 
 from selenium import webdriver
 import time
+from selenium.webdriver.support.wait import WebDriverWait
 
 user_main_url = 'https://my.oschina.net/u'
 
-username = '*******'
-password = '********'
+username = 'mqiuqiu1988@yahoo.com'
+password = 'mqiuqiu1988'
 
 url = 'https://www.oschina.net/home/login?goto_page=https%3A%2F%2Fmy.oschina.net%2Fu%2F564070%2Fblog'
 
@@ -31,7 +32,9 @@ while True:
         # 不在个人主页中就继续加载了。
         time.sleep(1)
 
-
+my_space = WebDriverWait(driver, 500).until(
+    lambda d: d.find_element_by_xpath('/html/body/div[2]/div/div[3]/a[2]'))
+my_space.click()
 # 点击进入写作页。
 driver.find_element_by_xpath('/html/body/div/div/div/div/div[1]/div[1]/div[4]/a').click()
 

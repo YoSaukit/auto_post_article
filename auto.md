@@ -5,7 +5,7 @@ categories:
     - 测试
 author: Jessica Qiu
 tags:
-    - 标签
+    - 人工智能
 cover_picture: https://images.unsplash.com/photo-1520095972714-909e91b038e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1110ecf3ce9e4184d4676c54dec0032d&auto=format&fit=crop&w=500&q=60
 top: 1
 ---
