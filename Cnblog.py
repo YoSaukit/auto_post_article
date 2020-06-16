@@ -9,7 +9,7 @@ config = {
     'url':    'https://rpc.cnblogs.com/metaweblog/YoSaukit',
     'appKey': 'YoSaukit',
     'user':   'YoSaukit',
-    'passwd': 'mqiuqiu1988!'
+    'passwd': '******!'
 }
 
 class MetaWeblog:
