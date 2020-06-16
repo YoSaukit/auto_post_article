@@ -11,8 +11,8 @@ class CSDN(object):
     @staticmethod
     def post(main, timeout, self_timeout=5):
         # 1.账号密码
-        account = '15600282811'
-        password = 'mqiuqiu1988'
+        account = '*****'
+        password = '*****'
 
         # 2.跳转登陆
         login = 'https://passport.csdn.net/account/login'
